@@ -1,0 +1,1 @@
+UTF8= Encoding.find('UTF-8')

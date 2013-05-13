@@ -1,0 +1,102 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+	"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml xml:lang=fr">
+<head>
+	<title>Myst</title>
+	<meta http-equiv=content-type content=text/html;charset=UTF-8 />
+	<link rel=icon type=image/png href=design/spiral.png />
+	<link rel=stylesheet href=style.css />
+	<script language=Javascript>
+		var host = '<?var host ?>', port = '<?var port ?>'
+		var serverInfo = '<?var server_info ?>'
+	</script>
+	<script language=Javascript src=swfobject.js></script>
+	<script language=Javascript>
+			swfobject.registerObject('myst', '9.0.0')
+	</script>
+	<script language=Javascript src=shortcuts.js></script>
+	<script language=Javascript src=script.js></script>
+</head>
+
+<body onresize=resize() onload=load()>
+
+<div style=visibility:none;position:absolute;left:-1000px>
+	<object classid=clsid:D27CDB6E-AE6D-11cf-96B8-444553540000 width=100 height=100 id=myst>
+		<param name=movie value=Myst.swf>
+		<param name=allowScriptAccess value=always>
+		<param name=allowNetworking value=all>
+		<!--[if !IE]>-->
+		<object type=application/x-shockwave-flash data=Myst.swf width=10 height=10>
+			<param name=allowScriptAccess value=always>
+			<param name=allowNetworking value=all>
+		</object>
+		<!--<![endif]-->
+	</object>
+</div>
+
+<table id=team_w cellpadding=0 cellspacing=0 style=border-collapse:collapse;position:fixed;top:50px;left:20px;display:none>
+<tr background=design/w_top.png>
+	<td height=24 onmousedown=tw_down() onmouseup=tw_up() style=border-right:none>
+		<font color=#496690><b>&nbsp;Équipe</b></font>
+	</td><td width=14 style=padding:4px;border-left:none>
+		<img src=design/close.png onclick=team_hide()>
+	</td>
+</tr><tr>
+	<td colspan=2 background=design/dark_bg.png>
+		<div id=team_w_content style=padding:8px;color:white>
+			Pas d'équipe. <a href="javascript:p('aide team')">Former une équipe</a>
+		</div>
+	</td>
+</tr></table>
+
+<table id=body cellpadding=0 cellspacing=0 align=center><tr>
+	<td rowspan=3 width=9 background=design/left.png></td>
+	<td id=maintd>
+		<div id=main class=default>
+			<p>Flash Player est requis pour vous connecter au jeu (si possible la dernière version).</p>
+			<p><a target=_blanck href=http://get.adobe.com/fr/flashplayer/>Télécharger Flash Player</a></p>
+			<p><a href=index.rb>Réessayer</a></p>
+		</div>
+		<hr style=margin-bottom:0px;margin-top:0px>
+		<div id=console>Si un problème d'affichage survient ou si le jeu n'est pas fluide, <a href=configuration.html target=_blank>cliquez ici</a>.
+			<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+			<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+			<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+			Si un problème d'affichage survient ou si le jeu n'est pas fluide, <a href=configuration.html target=_blank>cliquez ici</a>.
+			<br>
+	<br><pre><?var Myst ?></pre><br>
+			<br>
+		</div>
+	</td>
+	<td rowspan=3 width=9 background=design/right.png></td>
+</tr><tr>
+	<td id=vmt height=20 valign=bottom>
+		<table cellpadding=0 cellspacing=0><tr>
+			<td width=250 bgcolor=orange>
+				<span id=left_hp_arrows class=leftarrows></span>
+				<span id=hp0 class=centernumber>Vie</span>
+				<span id=right_hp_arrows class=rightarrows></span>
+				<img id=v0 src=design/stats/life.png>
+			</td>
+			<td width=8></td>
+			<td width=250 bgcolor=#3399CC>
+				<span id=left_mp_arrows class=leftarrows></span>
+				<span id=mp0 class=centernumber>Magie</span>
+				<span id=right_mp_arrows class=rightarrows></span>
+				<img id=m0 src=design/stats/mana.png>
+			</td>
+			<td id=adv1 width=8></td>
+			<td id=adv2 width=229><div id=adv>
+				<span id=adv_name class=centernumber>Adversaire</span>
+				<img id=adv_v src=design/stats/life.png>
+			</div></td>
+		</tr></table>
+	</td>
+</tr><tr>
+	<td id=input>
+		<div id=shortcuts></div>
+		<input type=text id=bar onkeypress=puts(event) />
+	</td>
+</tr></table>
+</body>
+</html>

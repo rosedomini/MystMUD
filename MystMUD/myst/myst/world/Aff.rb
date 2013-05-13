@@ -1,0 +1,4 @@
+
+class Aff < WorldObject
+	
+end

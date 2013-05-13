@@ -1,0 +1,16 @@
+﻿Voici quelques conseils de départ:
+
+- tapez <b><i>aide</i></b> pour voir la liste des commandes disponibles.
+- tapez <b><i>look</b></i> pour regarder autours de vous si vous êtes perdu#{e} (<b><i>aide look</i></b> pour plus d'informations).
+
+Les salles contiennent des sorties qui vous permettent de vous déplacer (<b><i>aide move</b></i> pour en savoir plus).
+
+Le jeu et votre personnage se contrôle la plupart du temps avec le clavier. Cependant lorsqu'il y a des liens hypertextes, cliquer dessus agira comme une commande tapée au clavier (voir la barre d'état de votre navigateur en passant la souris sur le lien).
+
+Sachez aussi qu'une commande peut souvent être raccourcie.
+Quelques exemples :
+- "l" au lieu de "look"
+- "read liv" pour lire un grand livre noir (taper "r l" a des chances de marcher aussi mais ce n'est pas conseillé).
+Si vous avez plusieurs livres, il faudra être un peu plus précis.
+
+C'est tout pour le moment. J'espère que vous découvrirez tout cela plus en détail en jouant.

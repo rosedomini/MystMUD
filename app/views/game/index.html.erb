@@ -1,0 +1,71 @@
+<% content_for :head do %>
+  <script type="text/javascript">
+    var host = '<%= @host %>';
+    var port = <%= @port %>;
+    var server_online = <%= @server_online %>;
+    var online_players = <%= @online_players %>;
+  </script>
+  <%= javascript_include_tag "swfobject", "data-turbolinks-track" => true %>
+  <script type="text/javascript">
+    swfobject.registerObject('myst', '9.0.0');
+  </script>
+  <%= javascript_include_tag "shortcuts",
+                             "index",
+                             "List",
+                             "Window",
+                             "myst_commands",
+                             "loader", "data-turbolinks-track" => true %>
+<% end %>
+<% content_for :body_attributes do %>
+  onload="load()" onresize="resize()" onkeydown="keydown()" onmousemove="mousemove()" onmousedown="mousedown()" onmouseup="mouseup()" onhelp="help()"
+<% end %>
+<div style="visibility:hidden;position:fixed;left:-1px">
+ <object id="myst" classid="clsid:D27CDB6E-AE6D-11cf-96B8-444553540000" width="1" height="1">
+  <param name="movie" value="myst.swf"/>
+  <param name="allowScriptAccess" value="always"/>
+  <param name="allowNetworking" value="all"/>
+  <!--[if !IE]>-->
+   <object type="application/x-shockwave-flash" data="myst.swf" width="1" height="1">
+    <param name="allowScriptAccess" value="always"/>
+    <param name="allowNetworking" value="all"/>
+   </object>
+  <!--<![endif]-->
+ </object>
+</div>
+<div id="windows"></div>
+<script>
+new Window('team', 'Équipe', 'team', '<div id=team class=window>\
+Pas d\'équipe. <a href="javascript:p(\'aide team\')">\
+Former une équipe</a></div>', false, -20, -50)
+</script>
+<div id="bars">
+ <input id="bar" type="text" onkeypress="puts(event)" value=""/>
+ <div id="lifebar">
+  <span id="left_hp_arrows" class="leftarrows"></span>
+  <span id="hp0" class="centernumber">Vie</span>
+  <span id="right_hp_arrows" class="rightarrows"></span>
+  <img id="v0" src="design/stats/life.png" />
+ </div>
+ <div id="manabar">
+  <span id="left_mp_arrows" class="leftarrows"></span>
+  <span id="mp0" class="centernumber">Magie</span>
+  <span id="right_mp_arrows" class="rightarrows"></span>
+  <img id="m0" src="design/stats/mana.png" />
+ </div>
+</div>
+<table id="main" style="display:none" class="compact">
+ <tr>
+  <td id="mud">
+   <div id="console">
+    <div style="height:300px"></div>
+    Un problème d'affichage? <a href="configuration.html" target="_blank">
+Cliquer ici</a><br><br>
+    <%= @myst %>
+
+    <div style="height:200px"></div>
+   </div>
+  </td>
+  <td width="9" background="design/right.png" style="background-attachment:fixed"></td>
+  <td>&nbsp;</td>
+ </tr>
+</table>

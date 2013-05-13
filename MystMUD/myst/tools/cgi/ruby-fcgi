@@ -1,0 +1,39 @@
+#!/usr/bin/ruby1.9
+# Coding: UTF-8
+
+require 'fcgi'
+require '../settings'
+require "#{MUD_FOLDER['cache']}/cache"
+require 'tools/load_html'
+require "#{MUD_FOLDER['myst']}/func/ruby_def"
+require "#{MUD_FOLDER['myst']}/func/Error"
+
+unless defined? UTF8
+	UTF8 = Encoding.find('UTF-8') end
+
+ERROR404 = "<?xml version=\"1.0\" encoding=\"iso-8859-1\"?>
+<!DOCTYPE html PUBLIC \"-//W3C//DTD XHTML 1.0 Transitional//EN\" \
+\"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd\">
+<html xmlns=\"http://www.w3.org/1999/xhtml\" xml:lang=\"en\" lang=\"en\">
+<head>
+	<title>404 - Not Found</title>
+</head>
+<body>
+	<h1>404 - Not Found</h1>
+</body>
+</html>"
+
+FCGI.each_cgi do |cgi|
+	print cgi.header # << "\n" might be necessary
+	script = "#{MUD_FOLDER['site']}#{cgi.script_name}"
+	
+	begin
+		if File.exists? script
+			Kernel.load script, true
+		else
+			puts ERROR404
+		end
+	rescue Exception
+		Error.handle ['stderr', 'html page']
+	end
+end

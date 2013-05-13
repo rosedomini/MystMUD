@@ -1,0 +1,365 @@
+60 fichiers ruby pour 414 méthodes, en 4830 lignes
+
+actor/Actor
+	Actor#str	Actor#con	Actor#wis	Actor#dex	Actor#armor	Actor#initialize id
+	Actor#after_load
+	Actor#add_item_stats item
+	Actor#remove_item_stats item
+	Actor#affect aff, power, time
+	Actor#unaffect aff
+	Actor#can_hold? item	Actor#can_reach? actor	Actor#capname	Actor#cmd arg
+	Actor#e	Actor#each_second
+	Actor#energize points, percent = nil
+	Actor#emote sth
+	Actor#female?	Actor#heal points, percent = nil
+	Actor#hp_arrows_useful
+	Actor#hurt dmg, actor
+	Actor#hwiz sth, color = nil
+	Actor#immortal?	Actor#implantation	Actor#in_olc? immortal	Actor#left_handed?	Actor#right_handed?	Actor#mp_arrows_useful
+	Actor#mp= new_mp
+	Actor#get_peace
+	Actor#retrieve id, number = 1
+	Actor#say_to_master sth, color = nil
+	Actor#sb? actor, maj=true
+	Actor#sees a	Actor#up_spell id, points = 1
+	Actor#update_weapons_and_shields
+	Actor#xp_gives actor # à prendre en compte plus tard
+actor/Fist
+	Fist#initialize actor, hand
+	Fist#update
+	Fist#typeactor/Heroe
+	Heroe.online
+	Heroe#initialize id
+	Heroe#after_load
+	Heroe#add_xp number, share = true
+	Heroe#delete_character
+	Heroe#echo name, *args
+	Heroe#heroe?	Heroe#hunger= value
+	Heroe#inspect	Heroe#killed actor = nil
+	Heroe#level_up
+	Heroe#mob?	Heroe#online?	Heroe#login sock
+	Heroe#logout write_MOTD = false
+	Heroe#send_msg force = nil
+	Heroe#show_shortcuts
+	Heroe#wiz sth, color=nil
+	Heroe#xp_needed	Heroe#named name
+actor/Mob
+	Mob#initialize id
+	Mob#after_load	Mob#echo *args	Mob#heroe?	Mob#in_olc? immortal
+	Mob#inspect
+	Mob#killed actor = nil		
+	Mob#mob?	Mob#online?	Mob#repop force = nil
+	Mob#wiz sth, color=nil	Mob#named name
+	Mob#repop force = nil
+cmd/action
+	Actor#cast spell, power, target
+	Actor#drag body, exit_name
+	Actor#drop item, number
+	Actor#eat item
+	Actor#examine something
+	Actor#get item, number
+	Actor#get_from body, item, number
+	Actor#give actor, item, number
+	Actor#junk item, number
+	Actor#kill target
+	Actor#look_around
+	Actor#look_actor actor
+	Actor#move exit_name_or_room, exit_msg = nil, enter_msg = nil, force = nil
+cmd/admin
+	Heroe#cmd_help command
+	Heroe#rcreate direction
+	Heroe#redit show = nil
+	Heroe#goto room = nil
+	Heroe#ruby script = nil
+cmd/check
+	Actor#check_aide
+	Actor#check_cast
+	Actor#check_chat
+	Actor#check_drag
+	Actor#check_drop
+	Actor#check_eat
+	Actor#check_examine
+	Actor#check_follow
+	Actor#check_get
+	Actor#check_give
+	Actor#check_junk
+	Actor#check_kill
+	Actor#check_look
+	Actor#check_option	Actor#check_pray
+	Actor#check_quit	Actor#check_read
+	Actor#check_remove
+	Actor#check_reply
+	Actor#check_say
+	Actor#check_spell
+	Actor#check_selectAvatar!
+	Actor#check_selectSkin!
+	Actor#check_special!
+	Actor#check_shortcut!
+	Actor#check_shout
+	Actor#check_team
+	Actor#check_tell
+	Actor#check_ts
+	Actor#check_wear
+	Actor#check_whocmd/check_admin
+	Actor#check_clone
+	end#check_delete
+	end#check_dump
+	end#check_edit
+	end#check_goto
+	end#check_help	end#check_load	end#check_olc
+	end#check_olcShow
+	end#check_rcreate
+	end#check_redit
+	end#check_ruby
+	end#check_set
+	end#check_summonItem
+cmd/Command
+	Command#inspect	Command#initialize id	Command#admincmd/communication
+	Actor#chat sth
+	Actor#pray sth
+	Actor#read item
+	Actor#reply sth
+	Actor#say sth
+	Actor#shout sth
+	Actor#tell heroe, sth
+cmd/divers
+	Actor#check_time
+	Actor#cmd_aide cmd = nil, word = nil # commande
+	Actor#cmd_option option = nil
+	Actor#cmd_spell spell
+	Actor#cmd_who all = nil
+cmd/divers_a
+	Actor#cmd_dump var = nil
+	Actor#cmd_load path
+cmd/gestion
+	Actor#check_affections
+	Actor#check_equipement
+	Actor#follow actor = nil
+	Actor#check_inventory
+	Actor#check_score
+	Actor#check_spells
+	Actor#cmd_shortcut action, id, value
+	Actor#remove on # place where item to remove is
+	Actor#cmd_team action = nil, actor = nil
+	Actor#wear item
+cmd/gestion_a
+	Actor#check_giveXp
+	Actor#check_force
+cmd/olc
+	Actor#cmd_set klass, object, var, value # ~ $hash[id].var = value
+	Actor#cmd_summonItem item, number = 1
+	Actor#cmd_edit klass, o
+	Actor#cmd_clone klass, id
+	Actor#cmd_olcShow klass, object
+	pannel#cmd_olc klass = nil, needle = nil # shows olc or class pannel
+func/Affection
+	Affection#initialize name, affect, unaffect
+func/Check
+	Check#world
+	Check#all_actors
+	Actor#check
+	Area#check
+	Room#check
+	Room#inventories
+	Room#inv inv
+	Room#spell_lists
+	Room#spell_list spell
+	Room#equipements
+	Room#equip equip
+func/Destroy
+	Actor#destroy
+	Room#destroy
+func/Error
+	Error.olc_class
+	Error.cmd_unavailable	Error.cmd_hack c # command name used
+	Error.warning s	Error.sql id	Error.display
+func/Fight
+	Fight.fighters
+	Fight.round
+func/Kernel
+	Kernel#check_cmd
+	Kernel#echo *args	Kernel#online_players	Kernel#send_all
+	Kernel#shutdown
+	Kernel#wiz sth, color = nilfunc/lists
+	ActorHash#named s
+	ActorHash#initialize
+	ActorHash#[]= key, value
+	Inventory#initialize hash = {}	Inventory#<< items
+	Inventory#add item, number
+	Inventory#>> item
+	Inventory#give item, number, inv
+	Inventory#junk item, number
+	Actor#each_actor_in_area
+	Actor#actors_in_area
+	Actor#each_heroe_in_area
+	Actor#heroes_in_area
+	Actor#each_mob_in_area
+	Actor#mobs_in_area
+	Actor#each_close_actor	Actor#each_close_heroe	Actor#each_close_mob	Actor#each_visible_actor	Actor#each_visible_body	Actor#each_visible_heroe	Actor#each_visible_mob	Actor#each_witness	Actor#each_witness_heroe	Actor#each_witness_mob	Actor#close_actors	Actor#close_heroes	Actor#close_mobs	Actor#visible_actors	Actor#visible_bodies	Actor#visible_heroes	Actor#visible_mobs	Actor#witnesses	Actor#witness_heroes	Actor#witness_mobsfunc/modifications
+	Array#delete_one value
+	Array#echo *args
+	Array#no value
+	Array#seek needle, count = nil, method = :name
+	Array#named needle, count = 1
+	Array#to_h
+	Array#wiz sth, color=nil	FalseClass#to_str	Hash#<< value
+	Hash#| h
+	Hash#echo *args
+	Hash#new_id	Hash#no value
+	Hash#seek_key needle, count = nil, method = :name
+	Hash#seek_value needle, count = nil, method = :name
+	Hash#named needle
+	Hash#value_named needle, count = nil
+	Hash#key_named needle, count = nil
+	Hash#wiz sth, color=nil
+	NilClass#[] x	NilClass#destroyed?	Object#destroyed?	Object#destroy	String#link cmd	String#apos letter = 'e'
+	String#contains s	String.echo name, *args
+	String#escape	String#starts_with? s	String#same b	String#to_b	Symbol#starts_with? s	TrueClass#to_strfunc/Power
+	Power#initialize name, block
+	Power#[] *argsfunc/System
+	System#initialize idfunc/time
+	Kernel#pretty_time s
+	Kernel#wtime
+	Kernel#wdate what = nil
+func/undef
+	Kernel#books, icons, set_cmd_globals, system, tasks, world #, races
+mud
+	Kernel#mud_cmd sock, arg
+proc/affection
+	Actor#affect_bouclier time, power	Actor#unaffect_bouclier time, powerproc/mob
+	Kernel#hurt dmg, actor
+	Kernel#on_see actor 
+	Kernel#give_special actor, item
+	Kernel#on_wear_view actor, item, on
+	Kernel#on_hear actor, sth
+	Kernel#on_see actor
+	Kernel#on_see actor
+	Kernel#on_tick
+proc/power
+proc/room
+	Kernel#action_on_enter actor
+spells
+	Actor#cast_boule_de_feu success, power, target
+	Actor#cast_bouclier success, power, target = nil
+	Actor#cast_invisibilité success, power, target = nil
+	Actor#cast_soin success, power, target = nil
+srv/Dat.clone
+	Kernel.clone type, value, olc = nil
+srv/Dat.define
+	Dat#define
+	Dat#OLC *classnames
+	Dat#Aff
+	Dat#Area
+	Dat#Avatar
+	Dat#Body
+	Dat#Command
+	Dat#Heroe
+	Dat#Item
+	Dat#Mob
+	Dat#Room
+	Dat#createRoom x = 0, y = 0, z = -1
+	Dat#Shop
+	Dat#Skin
+	Dat#Spell
+	Dat#System
+	Dat#World
+srv/Dat.load
+	Kernel.load type, value, olc = nil
+srv/Dat
+	Dat#initialize name, hash, klass, table = nil
+	Dat#add priority, name, type, &check_proc
+	Dat#after_load
+	Dat#copy_from object
+	Dat#from_olc object, var, value
+	Dat#load priority
+	Dat#make to_add
+	Dat#pre_load
+	Dat#save
+	Dat#to_olc var, value
+srv/Dat.save
+	Kernel.save type, value, olc = nil
+srv/globals
+srv/Guest
+	TCPSocket#init_guest
+	TCPSocket#e
+	TCPSocket#echo name, *args
+	TCPSocket#eject reason = nil
+	TCPSocket#off
+	TCPSocket#start arg
+	TCPSocket#login_password arg
+	TCPSocket#register_password arg
+	TCPSocket#desc_sex arg
+	TCPSocket#desc_hand arg
+	TCPSocket#desc_height arg
+	TCPSocket#desc_haircolor arg
+	TCPSocket#desc_hairlength arg
+	TCPSocket#desc_eyecolor arg
+	TCPSocket#normal arg	TCPSocket#require_current_password_to_change_it arg
+	TCPSocket#require_new_password arg
+	TCPSocket#require_password_to_delete_character arg
+	TCPSocket#wiz sth, color=nil
+srv/Load
+	Load#world
+	Load#books
+	Load#icons
+	Load#set_cmd_globals
+	Load#system
+	Load#races
+	Load#tasks
+srv/Log
+	Log#link_error
+	Log#cmd_error error, arg, heroe = nil
+	Log#open name	Log#timesrv/policy
+srv/Save
+	Save.world
+	Save.createBackup
+	Save.restoreBackup
+srv/settings
+srv/Task
+	Task#initialize klass, func, repeat = 0, timestamp = 0, *args
+	Task#execute
+	Task#inspect
+	Task#timeleft	Task.add *args	Task.each_second
+	Task.execute time
+	Task#gc	Task#update_cache_server
+	Task#update_cache_world
+test/each_second
+	Actor#each_second
+	Actor#each_second
+test/test
+	Kernel#pretty_time s
+world/Aff
+	Aff#initialize id
+world/Area
+	Area#initialize id = $area.new_id
+	Area#in_olc? immortal	Area#inspectworld/Avatar
+	Avatar#initialize idworld/Body
+	Body#create actor, expire, room
+	Body#after_load
+	Body#in_olc immortal	Body#initialize id = $body.new_id	Body#inspect	Body#over
+world/Item
+	Item#initialize id	Item#call_power caller
+	Item#in_olc? immortal
+	Item#inspect	Item#x number
+	Item#repop
+world/Race
+	Race#initialize idworld/Room
+	Room#initialize id = $room.new_id
+	Room#destroy
+	Room#distance_to room
+	Room#<< object
+	Room#>> object
+	Room#after_load
+	Room#heroes	Room#in_olc? immortal	Room#inspect	Room#item_repop
+	Room#mobs	Room#on_enter actor
+	Room#wiz msg, color = nil	Room#near x, y = nil, z = nil
+world/Shop
+	Shop#initialize id	Shop#in_olc? immortalworld/Skin
+	Skin#initialize idworld/Spell
+	Spell#initialize id	Spell#inspect	Spell#containerworld/Team
+	Team#initialize leader
+world/World
+	World#initialize id	World#[] x, y, z	World#after_load
+	World#create_room x, y, z
+	World#delete_room_index x, y, z
+	World#in_olc? immortal	World#refresh

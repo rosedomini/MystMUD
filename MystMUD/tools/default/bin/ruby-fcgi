@@ -1,0 +1,23 @@
+#!/usr/bin/ruby1.9
+# Coding: UTF-8
+
+require 'fcgi'
+require '../settings'
+require '../lib/load_html'
+require '../lib/error'
+require 'functions/datatree'
+
+FCGI.each_cgi do |cgi|
+ $cgi= cgi
+	print "Content-Type: text/html\r\n\r\n" # might need one more \n
+ script = "#{ROOT}/site#{$cgi.script_name}"
+ begin
+  if File.exists? script
+   Kernel.load script, true
+  else
+   print Error::NOT_FOUND
+  end
+ rescue Exception
+  Error.report
+ end
+end

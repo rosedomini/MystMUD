@@ -1,0 +1,199 @@
+a:link, a:visited, a:active {
+	color:#3399CC;
+}
+
+a:hover {
+	text-decoration:none;
+}
+
+body {
+	background-color:black;
+	margin:0px;
+	font-family:Verdana, Arial, Helvetica, sans-serif;
+	font-size:12px;
+	color:white;
+	background-image:url("ico/bg/tropical forest.jpg");
+	background-position:100% 100%;
+	background-attachment:fixed;
+}
+
+table {
+	border-collapse:collapse;
+	border-spacing:0px;
+}
+
+td {
+	padding:0px;
+}
+
+.centernumber {
+	position:absolute;
+	display:block;
+	width:250px;
+	margin-top:1px;
+	font-size:11px;
+	font-weight:bold;
+	text-align:center;
+}
+
+a.configuration {
+	display:block;
+	padding:8px;
+}
+
+.default {
+	font-family:Verdana, Arial, Helvetica, sans-serif;
+	font-size:12px;
+	color:black;
+	border-color:black;
+}
+
+.frame {
+	max-height:500px;
+	overflow-y:auto;
+}
+
+.leftarrows {
+	font-size:16px;
+	position:absolute;
+	display:block;
+	width:100px;
+	margin-top:-2px;
+	font-weight:bold;
+	text-align:right;
+}
+
+.list {
+	border-collapse:collapse;
+}
+
+.list th {
+	visibility:hidden;
+}
+
+.list td {
+	width:400px;
+	font-size:12px;
+	color:white;
+}
+
+.list td:hover {
+	color:orange;
+}
+
+.list-ico {
+	height:20px;
+	width:20px;
+}
+
+.rightarrows {
+	font-size:16px;
+	position:absolute;
+	display:block;
+	margin:-2px 0px 0px 150px;
+	font-weight:bold;
+}
+
+div.window {
+	padding:8px;
+	color:black;
+}
+
+table.window {
+	font-family:Verdana, Arial, Helvetica, sans-serif;
+	font-size:12px;
+	border-collapse:collapse;
+	position:fixed;
+	top:0px;
+	left:0px;
+	border-collapse:collapse;
+	border-spacing:0px;
+	display:none;
+}
+
+table.window .w_title {
+	border-top-left-radius:7px;
+	height:24px;
+	padding:0px 0px 0px 15px;
+	/* color:#496690; */
+	color:black;
+	font-weight:bold;
+}
+
+table.window .w_body {
+	/* background:url(design/darker_px.png); */
+	background:url(design/brighter_px.png);
+	border:1px solid #899197;
+}
+
+table.window .w_hide {
+	border-top-right-radius:7px;
+	border-left:hidden;
+	width:14px;
+	padding:0px 8px 0px 0px;
+}
+
+tr.window {
+	background-image:url(design/w_top.png);
+}
+
+#console {
+	width:591px;
+	max-width:591px;
+	overflow-x:hidden;
+	font-family:Verdana, Arial, Helvetica, sans-serif;
+	font-size:11pt;
+	color:#DDDDDD;
+	padding:0px 0px 54px 4px;
+	background-image:url(design/darker_px.png);
+}
+
+#top {
+	padding:0px 0px 8px 5px;
+	overflow:auto;
+	background-image:url(design/whiter_px.png);
+	color:black;
+}
+
+#top a:link, a:visited, a:active {
+	color:#3388DD;
+}
+
+#bars {
+	width:600px;
+	position:fixed;
+	left:0px;
+	bottom:0px;
+	z-index:1;
+	visibility:hidden;
+}
+
+#bar {
+	font-family:Verdana, Arial, Helvetica, sans-serif;
+	font-size:14px;
+	height:24px;
+	border:1px solid #848484;
+	width:593px;
+}
+
+#lifebar, #manabar {
+	width:250px;
+	position:absolute;
+	bottom:28px;
+}
+
+#lifebar {
+	left:50px;
+	background-image:url(design/stats/life1.png);
+}
+
+#manabar {
+	left:300px;
+	background-image:url(design/stats/mana1.png);
+}
+
+#v0, #m0 {
+	display:block;
+	width:250px;
+	height:16px;
+}

@@ -1,0 +1,5 @@
+﻿Bonjour #{@name},
+
+Nous avons le plaisir de vous annoncer votre admission dans la Grande École de Sifnos. Nous vous invitons à vous rendre sur l'île de Sifnos le plus tôt possible ! Il me semble que de chez vous, il faille quelques jours de pirogue. Ne vous inquiétez pas, les eaux de l'Everdale se portent bien.
+
+La Directrice: Mme Elea Rivenfall

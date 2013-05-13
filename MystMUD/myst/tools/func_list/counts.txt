@@ -1,0 +1,12 @@
+2010-05-15 20:12:44 +0100 => 53 fichiers ruby pour 319 méthodes, en 4267 lignes.
+2010-05-16 10:29:55 +0100 => 53 fichiers ruby pour 327 méthodes, en 4327 lignes.
+2010-05-21 22:34:11 +0100 => 53 fichiers ruby pour 333 méthodes, en 4352 lignes.
+2010-05-23 12:49:59 +0100 => 54 fichiers ruby pour 340 méthodes, en 4257 lignes.
+2010-06-23 00:51:30 +0100 => 54 fichiers ruby pour 368 méthodes, en 4181 lignes.
+2010-06-27 15:59:01 +0100 => 54 fichiers ruby pour 380 méthodes, en 4265 lignes.
+2010-06-28 02:57:06 +0100 => 55 fichiers ruby pour 383 méthodes, en 4231 lignes.
+2010-07-02 18:38:56 +0100 => 55 fichiers ruby pour 398 méthodes, en 4151 lignes.
+2010-07-04 22:48:41 +0100 => 56 fichiers ruby pour 402 méthodes, en 4239 lignes.
+2010-10-13 17:35:59 +0100 => 58 fichiers ruby pour 379 méthodes, en 4056 lignes.
+2010-10-19 18:07:36 +0100 => 57 fichiers ruby pour 382 méthodes, en 3996 lignes.
+2011-04-10 01:15:00 +0100 => 60 fichiers ruby pour 414 méthodes, en 4830 lignes.

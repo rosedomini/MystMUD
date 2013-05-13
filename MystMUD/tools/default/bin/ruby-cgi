@@ -1,0 +1,20 @@
+#!C:/Ruby/bin/ruby.exe
+
+require 'cgi'
+require '../settings'
+require '../lib/load_html'
+require '../lib/error'
+require 'functions/datatree'
+
+$cgi= CGI.new
+print "Content-Type: text/html\r\n\r\n\n"
+script= "#{ROOT}/site#{$cgi.script_name}"
+begin
+	if File.exists? script
+		load script, true
+	else
+		print Error::NOT_FOUND
+	end
+rescue Exception
+	Error.report
+end

@@ -1,0 +1,10 @@
+TRUNCATE TABLE Area;
+INSERT INTO Area VALUES ('1','Le Myst du milieu','-500','-500','-500','500','500','500');
+TRUNCATE TABLE Avatar;
+INSERT INTO Avatar VALUES ('1','Bourreau','bourreau1');
+INSERT INTO Avatar VALUES ('2','Bourreau','bourreau2');
+INSERT INTO Avatar VALUES ('3','Bourreau','bourreau3');
+INSERT INTO Avatar VALUES ('4','Chasseur','Chasseur1');
+INSERT INTO Avatar VALUES ('5','Chasseur','Chasseur2');
+INSERT INTO Avatar VALUES ('6','Chasseur','Chasseur3');
+INSERT INTO Avatar VALUES ('7','default','default');
